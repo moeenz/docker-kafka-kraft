@@ -4,27 +4,43 @@ Apache Kafka Docker image using using Kafka Raft metadata mode (KRaft). In KRaft
 
 **IMPORTANT: THIS IMAGE IS ONLY VALID FOR TEST PURPOSES AND NOT PRODUCTION USE.**
 
-# Getting Started
+## Getting Started
 
 ```bash
-    $ docker pull
-    $ docker run
+    $ docker pull moeenz/docker-kafka-kraft
+    $ docker run -e CONTAINER_HOST_NAME=kafka -e CREATE_TOPICS=topic-a,topic-b,topic-c moeenz/docker-kafka-kraft
 ```
 
-Now you can reach container...
+- Now you can reach the container at `localhost:9093` on your host machine or inside Docker network with hostname `kafka`.
+- Comma seperated values received by `CREATE_TOPICS` env will be used to create topics at startup time.
 
-# Environment Variables
+### Compose Example
+
+```yaml
+version: "3.8"
+
+services:
+  kafka:
+    image: moeenz/docker-kafka-kraft:latest
+    restart: always
+    ports:
+      - "9093:9093"
+    environment:
+      - CONTAINER_HOST_NAME=kafka
+```
+
+## Environment Variables
 
 | Name                | Type     | Description                                                    | Example                 |
 | ------------------- | -------- | -------------------------------------------------------------- | ----------------------- |
 | CONTAINER_HOST_NAME | string   | Hostname for the running container as the Kafka listener       | kafka                   |
 | CREATE_TOPICS       | []string | Comma separated list of topics to be created post server setup | topic-a,topic-b,topic-c |
 
-# Resources
+## Resources
 
 - [https://adityasridhar.com/posts/how-to-easily-install-kafka-without-zookeeper](https://adityasridhar.com/posts/how-to-easily-install-kafka-without-zookeeper)
 
-# License
+## License
 
 MIT License
 

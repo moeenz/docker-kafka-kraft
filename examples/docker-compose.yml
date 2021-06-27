@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  kafka:
+    image: moeenz/docker-kafka-kraft:latest
+    restart: always
+    ports:
+      - "9093:9093"
+    environment:
+      - CONTAINER_HOST_NAME=kafka
