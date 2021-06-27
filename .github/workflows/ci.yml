@@ -1,4 +1,4 @@
-name: CI
+name: Build and Push
 
 on:
   push:
@@ -32,7 +32,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{steps.vars.outputs.tags_list}}
+          tags: ${{ steps.vars.outputs.tags_list }}
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
