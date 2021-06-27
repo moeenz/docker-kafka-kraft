@@ -17,4 +17,6 @@ COPY ./wait-for-it.sh /opt/kafka/kafka_2.13-2.8.0
 ENV CONTAINER_HOST_NAME=
 ENV CREATE_TOPICS=
 
+EXPOSE 9092 9093
+
 ENTRYPOINT [ "./docker-entrypoint.sh" ]
