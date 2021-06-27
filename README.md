@@ -7,8 +7,8 @@ Apache Kafka Docker image using using Kafka Raft metadata mode (KRaft). In KRaft
 ## Getting Started
 
 ```bash
-    $ docker pull moeenz/docker-kafka-kraft
-    $ docker run -e CONTAINER_HOST_NAME=kafka -e CREATE_TOPICS=topic-a,topic-b,topic-c moeenz/docker-kafka-kraft
+  $ docker pull moeenz/docker-kafka-kraft
+  $ docker run -e CONTAINER_HOST_NAME=kafka -e CREATE_TOPICS=topic-a,topic-b,topic-c moeenz/docker-kafka-kraft
 ```
 
 - Now you can reach the container at `localhost:9093` on your host machine or inside Docker network with hostname `kafka`.
