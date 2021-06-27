@@ -31,10 +31,10 @@ services:
 
 ## Environment Variables
 
-| Name                | Type     | Description                                                    | Example                 |
-| ------------------- | -------- | -------------------------------------------------------------- | ----------------------- |
-| CONTAINER_HOST_NAME | string   | Hostname for the running container as the Kafka listener       | kafka                   |
-| CREATE_TOPICS       | []string | Comma separated list of topics to be created post server setup | topic-a,topic-b,topic-c |
+| Name                      | Type     | Description                                                    | Example                 |
+| ------------------------- | -------- | -------------------------------------------------------------- | ----------------------- |
+| KRAFT_CONTAINER_HOST_NAME | string   | Hostname for the running container as the Kafka listener       | kafka                   |
+| KRAFT_CREATE_TOPICS       | []string | Comma separated list of topics to be created post server setup | topic-a,topic-b,topic-c |
 
 ## Resources
 
