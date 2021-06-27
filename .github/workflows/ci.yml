@@ -25,7 +25,7 @@ jobs:
         id: vars
         shell: bash
         run: |
-          echo "::set-output name=tags_list::moeenz/docker-kafka-kraft:$(git rev-parse --short=12 HEAD),moeenz/docker-kafka-kraft:latest"
+          echo "::set-output name=tags_list::moeenz/docker-kafka-kraft:$(echo ${GITHUB_SHA} | cut -c1-12),moeenz/docker-kafka-kraft:latest"
 
       - name: Build and push
         id: docker_build
