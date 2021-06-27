@@ -1,6 +1,6 @@
 # Docker Kafka Kraft
 
-![CI Status](https://github.com/moeenz/docker-kafka-kraft/actions/workflows/ci.yml/badge.svg?branch=master)
+![Build and Push Status](https://github.com/moeenz/docker-kafka-kraft/actions/workflows/ci.yml/badge.svg?branch=master)
 
 Apache Kafka Docker image using using Kafka Raft metadata mode (KRaft). In KRaft the Kafka metadata information will be stored as a partition within Kafka itself. There will be a KRaft Quorum of controller nodes which will be used to store the metadata. The metadata will be stored in an internal Kafka topic `@metadata`.
 
@@ -9,12 +9,12 @@ Apache Kafka Docker image using using Kafka Raft metadata mode (KRaft). In KRaft
 ## Getting Started
 
 ```bash
-  $ docker pull moeenz/docker-kafka-kraft
-  $ docker run -e CONTAINER_HOST_NAME=kafka -e CREATE_TOPICS=topic-a,topic-b,topic-c moeenz/docker-kafka-kraft
+$ docker pull moeenz/docker-kafka-kraft
+$ docker run -e KRAFT_CONTAINER_HOST_NAME=kafka -e KRAFT_CREATE_TOPICS=topic-a,topic-b,topic-c moeenz/docker-kafka-kraft
 ```
 
 - Now you can reach the container at `localhost:9093` on your host machine or inside Docker network with hostname `kafka`.
-- Comma seperated values received by `CREATE_TOPICS` env will be used to create topics at startup time.
+- Comma seperated values received by `KRAFT_CREATE_TOPICS` env will be used to create topics at startup time.
 
 ### Compose Example
 
