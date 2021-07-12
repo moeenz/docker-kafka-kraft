@@ -28,7 +28,8 @@ services:
     ports:
       - "9093:9093"
     environment:
-      - CONTAINER_HOST_NAME=kafka
+      - KRAFT_CONTAINER_HOST_NAME=kafka
+      - KRAFT_CREATE_TOPICS=topic-a,topic-b,topic-c
 ```
 
 ## Environment Variables
