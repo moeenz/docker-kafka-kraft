@@ -10,7 +10,7 @@ Apache Kafka Docker image using using Kafka Raft metadata mode (KRaft). In KRaft
 
 ```bash
 $ docker pull moeenz/docker-kafka-kraft
-$ docker run -e KRAFT_CONTAINER_HOST_NAME=kafka -e KRAFT_CREATE_TOPICS=topic-a,topic-b,topic-c moeenz/docker-kafka-kraft
+$ docker run -e KRAFT_CONTAINER_HOST_NAME=kafka -e KRAFT_CREATE_TOPICS=topic-a,topic-b,topic-c -e KRAFT_PARTIONS_PER_TOPIC=3 moeenz/docker-kafka-kraft
 ```
 
 - Now you can reach the container at `localhost:9093` on your host machine or inside Docker network with hostname `kafka`.
@@ -30,6 +30,7 @@ services:
     environment:
       - KRAFT_CONTAINER_HOST_NAME=kafka
       - KRAFT_CREATE_TOPICS=topic-a,topic-b,topic-c
+      - KRAFT_PARTIONS_PER_TOPIC=3
 ```
 
 ## Environment Variables
@@ -38,6 +39,7 @@ services:
 | ------------------------- | -------- | -------------------------------------------------------------- | ----------------------- |
 | KRAFT_CONTAINER_HOST_NAME | string   | Hostname for the running container as the Kafka listener       | kafka                   |
 | KRAFT_CREATE_TOPICS       | []string | Comma separated list of topics to be created post server setup | topic-a,topic-b,topic-c |
+| KRAFT_PARTIONS_PER_TOPIC  | int      | Number of partitions per topic                                 | 3                       |
 
 ## Resources
 
