@@ -9,4 +9,4 @@ services:
     environment:
       - KRAFT_CONTAINER_HOST_NAME=kafka
       - KRAFT_CREATE_TOPICS=topic-a,topic-b,topic-c
-      - KRAFT_PARTIONS_PER_TOPIC=3
+      - KRAFT_PARTITIONS_PER_TOPIC=3

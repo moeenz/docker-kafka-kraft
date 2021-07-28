@@ -45,8 +45,8 @@ else
     ./wait-for-it.sh $kafka_addr;
 
     pc=1
-    if [ $KRAFT_PARTIONS_PER_TOPIC ]; then
-        pc=$KRAFT_PARTIONS_PER_TOPIC
+    if [ $KRAFT_PARTITIONS_PER_TOPIC ]; then
+        pc=$KRAFT_PARTITIONS_PER_TOPIC
     fi
 
     for i in $(echo $KRAFT_CREATE_TOPICS | sed "s/,/ /g")

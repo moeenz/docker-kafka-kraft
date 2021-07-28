@@ -7,7 +7,7 @@ ARG scalaversion=2.13
 
 ENV KRAFT_CONTAINER_HOST_NAME=
 ENV KRAFT_CREATE_TOPICS=
-ENV KRAFT_PARTIONS_PER_TOPIC=
+ENV KRAFT_PARTITIONS_PER_TOPIC=
 
 RUN apt update \
     && apt install -y --no-install-recommends wget
