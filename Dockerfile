@@ -2,7 +2,7 @@ FROM openjdk:8u292-slim-buster
 
 WORKDIR /opt
 
-ARG kafkaversion=2.8.0
+ARG kafkaversion=3.3.1
 ARG scalaversion=2.13
 
 ENV KRAFT_CONTAINER_HOST_NAME=
