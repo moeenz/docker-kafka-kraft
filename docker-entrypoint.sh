@@ -24,7 +24,7 @@ else
     echo "inter.broker.listener.name=EXTERNAL" >> $properties_file;
     echo "listener.security.protocol.map=CONTROLLER:PLAINTEXT,INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT" >> $properties_file;
 fi
-echo "==> ✅ Enivronment variables applied.";
+echo "==> ✅ Environment variables applied.";
 
 
 echo "==> Setting up Kafka storage...";
