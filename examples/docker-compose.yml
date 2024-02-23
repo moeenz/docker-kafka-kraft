@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   kafka:
     image: moeenz/docker-kafka-kraft:latest

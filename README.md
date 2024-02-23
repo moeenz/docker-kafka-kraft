@@ -19,8 +19,6 @@ $ docker run -e KRAFT_CONTAINER_HOST_NAME=kafka -e KRAFT_CREATE_TOPICS=topic-a,t
 ### Compose Example
 
 ```yaml
-version: "3.8"
-
 services:
   kafka:
     image: moeenz/docker-kafka-kraft:latest
@@ -49,7 +47,7 @@ services:
 
 MIT License
 
-Copyright (c) 2021 docker-kafka-kraft
+Copyright (c) 2024 docker-kafka-kraft
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
