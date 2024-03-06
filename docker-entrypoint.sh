@@ -12,6 +12,12 @@ kafka_addr=localhost:9093;
 
 echo "==> Applying environment variables...";
 
+if [ -z $KRAFT_AUTO_CREATE_TOPICS ]; then
+    echo "==> Not setting auto.create.topics.enable (default; environment variable not set)."
+else
+    echo "==> Setting auto.create.topics.enable=${KRAFT_AUTO_CREATE_TOPICS}...";
+    echo "auto.create.topics.enable=${KRAFT_AUTO_CREATE_TOPICS}" >> $properties_file;
+fi
 
 if [ -z $KRAFT_CONTAINER_HOST_NAME ]; then
     echo "listeners=CONTROLLER://:19092,EXTERNAL://:9093" >> $properties_file;
